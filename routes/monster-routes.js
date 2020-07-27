@@ -29,19 +29,6 @@ router.post("/color/new", (req, res) => {
   }).then((newPet) => res.send(newPet));
 });
 
-// router.get('/monster/find/:id', (req, res) => {
-//     findRarity();
-//     console.log('rarity: ' + setRarity)
-//     db.Monster.findAll({
-//         where: {
-//             dex_area: req.params.id,
-//             dex_rarity: setRarity,
-//         }
-//     }).then(monster => {
-//         res.send(monster)
-//     })
-// })
-
 router.get('/monster/species/:id', (req, res) => {
     findRarity();
     console.log(setRarity)
@@ -93,25 +80,11 @@ router.get('/monsters/find/:id', (req, res) => {
         });
 })
 
-// router.post('/monsters/add', (req, res) => {
-    
-// });
-
-// router.post("/monsters/add", (req, res) => {
-//   console.log(setSpecies);
-//   db.Pet.create({
-//     species: setSpecies,
-//     area: setArea,
-//     rarity: setRarity,
-//     CollectionId: 1,
-//   }).then((newPet) => res.send(newPet));
-// });
-
 findRarity = (region) => {
   num = Math.floor(Math.random() * 100) + 1;
   if (num >= 90) {
     setRarity = "rare";
-  } else if (num >= 70) {
+  } else if (num >= 60) {
     setRarity = "uncommon";
   } else {
     setRarity = "common";
