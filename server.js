@@ -1,7 +1,11 @@
+const compression = require('compression')
 const express = require("express");
 const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewsController.js");
+
+app.use(compression({ filter: shouldCompress }))
+
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
